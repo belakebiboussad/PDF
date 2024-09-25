@@ -6,13 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Invoice</title>
     <link rel="stylesheet" href="{{ asset('pdf.css') }}" type="text/css">
+    <style type="text/css">
+    </style>
 </head>
 <body>
+
 <table class="w-full">
     <tr>
-        <td class="w-half">
-{{--            <img src="{{ asset('logo.png') }}" alt="laravel daily" width="200" />--}}
-{{--            <img src="{{ asset('storage/logo.png') }}" alt="...">--}}
+        <td class="w-half upn">
+{{--            <img src="{{ $imagePath ?? '' }}" alt="laravel dailyfd" width="100"/>--}}
+            <img src="{{'data:image/png;base64,'.base64_encode(file_get_contents(public_path('images/logo.png')))}}" width="100">
+            <img src="data:image/svg+xml;base64,<?php echo base64_encode(file_get_contents(base_path('public/images/logo.jpg'))); ?>" width="120">
+
+            <img src="{{storage_path('app/public/images/logo.jpg')}}" style="width: 20%">
+
         </td>
         <td class="w-half">
             <h2>Invoice ID: 834847473</h2>
@@ -25,7 +32,7 @@
         <tr>
             <td class="w-half">
                 <div><h4>To:</h4></div>
-                <div>John Doesss</div>
+                <div>John Doe</div>
                 <div>123 Acme Str.</div>
             </td>
             <td class="w-half">
@@ -45,7 +52,7 @@
             <th>Price</th>
         </tr>
         <tr class="items">
-            @foreach($data as $item)
+           {{-- @foreach($data as $item)
                 <td>
                     {{ $item['quantity'] }}
                 </td>
@@ -55,7 +62,7 @@
                 <td>
                     {{ $item['price'] }}
                 </td>
-            @endforeach
+            @endforeach--}}
         </tr>
     </table>
 </div>
