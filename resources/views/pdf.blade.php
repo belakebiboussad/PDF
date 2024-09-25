@@ -5,13 +5,13 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Invoice</title>
+    <link rel="stylesheet" href="{{ asset('pdf.css') }}" type="text/css">
 </head>
 <body>
 <table class="w-full">
     <tr>
         <td class="w-half">
-            <img src="{{ asset('logo.png') }}" alt="laravel daily" width="200" />
-
+{{--            <img src="{{ asset('logo.png') }}" alt="laravel daily" width="200" />--}}
 {{--            <img src="{{ asset('storage/logo.png') }}" alt="...">--}}
         </td>
         <td class="w-half">
@@ -25,7 +25,7 @@
         <tr>
             <td class="w-half">
                 <div><h4>To:</h4></div>
-                <div>John Doe</div>
+                <div>John Doesss</div>
                 <div>123 Acme Str.</div>
             </td>
             <td class="w-half">

@@ -18,13 +18,10 @@ class ImageController extends Controller
                 'price' => '129.00'
             ]
         ];
+        $pdf = Pdf::loadView('pdf', ['data' => $data]);
+        return $pdf->download();
+/*        $pdf->render();
+        return $pdf->stream();*/
 
-      /*  $pdf = Pdf::loadView('pdf', ['data' => $data]);
-       $pdf->stream("a.pdf");*/
-        $pdf = App::make('dompdf.wrapper');
-        //$pdf->loadHTML('<h1>Test</h1>');
-
-          $pdf = Pdf::loadView('pdf',['data'=>$data]);
-        return $pdf->stream();
     }
 }
